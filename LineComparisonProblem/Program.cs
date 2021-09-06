@@ -6,7 +6,7 @@ namespace Line_Comparision_Problem_CS
 /// </summary>
     class LineComparision
     {
-        //UC1 for Calculation of length using cartesian system
+        //UC3 for comparing lengths of two lines
 
         //Creating distance method to calculate length of a line using two points 
         //two points are (x1,y1) & (x2,y2)
@@ -18,9 +18,28 @@ namespace Line_Comparision_Problem_CS
             double length = Math.Round(lineLength, 2);
             return length;
         }
+        public static void comparingLines(string len1, string len2)
+        {
+            if (len1.CompareTo(len2) > 0)
+            {
+                Console.WriteLine("Line1 is greater than line2");
+            }
+            else if (len1.CompareTo(len2) < 0)
+            {
+                Console.WriteLine("Line1 is lesser than line2");
+            }
+            else
+            {
+                Console.WriteLine("Both lines are equal");
+            }
+        }
         static void Main(string[] args)
         {
-            Console.WriteLine("line length:" + LineComparision.distance(3, 4, 4, 3));
+            //Initializing two lines(line1,line2) by calling distance method
+            double line1 = LineComparision.distance(3, 4, 4, 3);
+            double line2 = LineComparision.distance(4, 5, 8, 3);
+
+            LineComparision.comparingLines(line1.ToString(), line2.ToString());
             Console.ReadLine();
         }
     }
